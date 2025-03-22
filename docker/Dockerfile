@@ -9,6 +9,13 @@ RUN dnf install httpd net-tools procps git wget composer php php-gd php-gmp php-
 RUN composer require gregwar/captcha
 WORKDIR /root
 
+
+#
+## CMD BUILD
+#
+
+FROM php8-composer AS cms-registration
+
 RUN git clone https://github.com/masterking32/WoWSimpleRegistration
 
 # Copier le contenu du projet vers /var/www/html
@@ -25,15 +32,16 @@ RUN sed -i 's/^#LoadModule rewrite_module/LoadModule rewrite_module/' /etc/httpd
 RUN sed -i 's/AllowOverride None/AllowOverride All/' /etc/httpd/conf/httpd.conf
 
 # Copier la configuration d'Apache dans le conteneur
-COPY ./000-default.conf /etc/httpd/conf.d/
-COPY ./php-fpm.conf /etc/httpd/conf.d/
+COPY docker/000-default.conf /etc/httpd/conf.d/
+
+COPY docker/php-fpm.conf /etc/httpd/conf.d/
 
 RUN chown -R apache:apache /var/www/html && chmod -R 755 /var/www/html && mkdir /run/php-fpm/
 # Exposer le port 80 pour accéder à Apache
 EXPOSE 80
 
 # Démarrer Apache en mode foreground
-COPY entrypoint.sh /
+COPY docker/entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]

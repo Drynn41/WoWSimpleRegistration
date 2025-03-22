@@ -1,0 +1,34 @@
+# docker-compose.yml for AzerothCore.
+#
+# Start the server with `docker compose up -d --build`
+#
+# Don't make changes this file! make a `docker-compose.override.yml` and make your
+# changes there instead.
+
+services:
+  wow-registration:
+    build:
+      context: .
+      target: cms-registration
+      dockerfile: docker/Dockerfile
+    image: landry41/wow-registration
+    container_name: wow-reg
+    networks:
+      - ac-network
+    ports: 
+      - 8080:80
+    environment:
+      - CMS_CONFIG_BASEURL=http://localhost # Base URL of your website
+      - CMS_CONFIG_PAGE_TITLE=Simple Register # Title of your website as displayed in the browser tab
+      - CMS_CONFIG_DEBUG_MODE=true # Debug mode to display errors
+      - CMS_CONFIG_REALMLIST=logon.myserver.com # Realmlist of your server
+      - CMS_CONFIG_SOAP_HOST=ac-worldserver # SOAP service address
+      - CMS_CONFIG_DB_AUTH_HOST=ac-database # Auth/Realmd database host address
+      - CMS_CONFIG_DB_AUTH_PORT=3306 # Auth/Realmd database port
+      - CMS_CONFIG_DB_AUTH_USER=root # Auth/Realmd database username
+      - CMS_CONFIG_DB_AUTH_PASS=password # Auth/Realmd database password
+      - CMS_CONFIG_DB_AUTH_DBNAME=acore_auth # Auth/Realmd database name
+      - CMS_CONFIG_REALMLISTS='{"1":{"realmid":1,"realmname":"Realm 1","db_host":"ac-database","db_port":"3306","db_user":"root","db_pass":"password","db_name":"acore_characters"}}' # Realmlist configuration for each character database
+
+networks:
+  ac-network:
