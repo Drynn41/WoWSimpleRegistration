@@ -24,7 +24,7 @@ RUN cp -R /root/WoWSimpleRegistration/* /var/www/html/
 WORKDIR /var/www/html/application
 
 RUN composer install
-RUN mv /var/www/html/application/config/config.php.sample /var/www/html/application/config/config.php
+COPY docker/config.php /var/www/html/application/config/config.php
 
 # Activer mod_rewrite pour Apache (important pour les URLs conviviales)
 RUN dnf install -y httpd-tools
