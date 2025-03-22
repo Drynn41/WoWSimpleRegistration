@@ -30,7 +30,7 @@ COPY docker/config.php /var/www/html/application/config/config.php
 RUN dnf install -y httpd-tools
 RUN sed -i 's/^#LoadModule rewrite_module/LoadModule rewrite_module/' /etc/httpd/conf/httpd.conf
 RUN sed -i 's/AllowOverride None/AllowOverride All/' /etc/httpd/conf/httpd.conf
-
+RUN sed -i 's/;clear_env = no/clear_env = no/' /etc/php-fpm.d/www.conf
 # Copier la configuration d'Apache dans le conteneur
 COPY docker/000-default.conf /etc/httpd/conf.d/
 
