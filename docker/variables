@@ -1,0 +1,49 @@
+CMS_CONFIG_BASEURL=http://localhost # Base URL of your website
+CMS_CONFIG_PAGE_TITLE=Simple Register # Title of your website as displayed in the browser tab
+CMS_CONFIG_LANGUAGE=english # Default language of your website
+CMS_CONFIG_SUPPORTED_LANGS='{"english":"English","persian":"Persian","italian":"Italian","chinese-simplified":"Chinese Simplified","chinese-traditional":"Chinese Traditional","swedish":"Swedish","french":"French","german":"German","spanish":"Spanish","korean":"Korean","russian":"Russian","portugues":"Portuguese"}' # Supported languages of your website
+CMS_CONFIG_DEBUG_MODE=true # Debug mode to display errors
+CMS_CONFIG_REALMLIST=logon.myserver.com # Realmlist of your server
+CMS_CONFIG_PATCH_LOCATION=http://mypatch.com/patch.mpq # URL to download the patch if available
+CMS_CONFIG_GAME_VERSION='3.3.5a (12340)' # Game version that your server is running
+CMS_CONFIG_EXPANSION=2 # Server expansion (0 = Classic, 1 = TBC, 2 = WotLK, etc.)
+CMS_CONFIG_SERVER_CORE=1 # Server core type (0 = TrinityCore, 1 = AzerothCore, etc.)
+CMS_CONFIG_BATTLENET_SUPPORT=false # Battle.net support for authentication
+CMS_CONFIG_SRP6_SUPPORT=true # SRP6 password encryption support
+CMS_CONFIG_SRP6_VERSION=2 # SRP6 version (0 = SRP6, 1 = SRP6v1, 2 = SRP6v2)
+CMS_CONFIG_DISABLE_TOP_PLAYERS=false # Disable the top players page
+CMS_CONFIG_DISABLE_ONLINE_PLAYERS=false # Disable the online players page
+CMS_CONFIG_DISABLE_CHANGEPASSWORD=false # Disable the change password feature
+CMS_CONFIG_MULTIPLE_EMAIL_USE=false # Allow multiple accounts with the same email address
+CMS_CONFIG_TEMPLATE=light # Template to use for the appearance of your website
+CMS_CONFIG_SMTP_HOST=smtp1.example.com # SMTP host address
+CMS_CONFIG_SMTP_PORT=587 # SMTP port
+CMS_CONFIG_SMTP_AUTH=true # Enable or disable SMTP authentication
+CMS_CONFIG_SMTP_USER=user@example.com # SMTP username
+CMS_CONFIG_SMTP_PASS=SECRET # SMTP password
+CMS_CONFIG_SMTP_SECURE=tls # SMTP encryption method ('tls' or 'ssl')
+CMS_CONFIG_SMTP_MAIL=no-reply@example.com # Email address used to send emails
+CMS_CONFIG_VOTE_SYSTEM=true # Enable or disable the vote system
+CMS_CONFIG_VOTE_SITES='[]' # Vote sites and their corresponding images
+CMS_CONFIG_CAPTCHA_TYPE=0 # Type of captcha to use (0 = Image Captcha, 1 = HCaptcha, 2 = ReCaptcha v2, >2 = Disable captcha)
+CMS_CONFIG_CAPTCHA_KEY='' # Key for HCaptcha or Recaptcha
+CMS_CONFIG_CAPTCHA_SECRET='' # Secret for HCaptcha or Recaptcha
+CMS_CONFIG_CAPTCHA_LANGUAGE=en # Language for captcha
+CMS_CONFIG_SOAP_FOR_REGISTER=false # Use SOAP interface for account registration
+CMS_CONFIG_SOAP_HOST=ac-worldserver # SOAP service address
+CMS_CONFIG_SOAP_PORT=7878 # SOAP service port
+CMS_CONFIG_SOAP_URI=urn:AC # SOAP URI
+CMS_CONFIG_SOAP_STYLE=SOAP_RPC # SOAP style
+CMS_CONFIG_SOAP_USERNAME=admin # Username for SOAP authentication
+CMS_CONFIG_SOAP_PASSWORD=admin # Password for SOAP authentication
+CMS_CONFIG_SOAP_CA_COMMAND='account create {USERNAME} {PASSWORD}' # SOAP command for creating an account
+CMS_CONFIG_2FA_SUPPORT=false # Two-Factor Authentication (2FA) support
+CMS_CONFIG_SOAP_2D_COMMAND='account set 2fa {USERNAME} off' # SOAP command to disable 2FA
+CMS_CONFIG_SOAP_2E_COMMAND='account set 2fa {USERNAME} {SECRET}' # SOAP command to enable 2FA
+CMS_CONFIG_DB_AUTH_HOST=ac-database # Auth/Realmd database host address
+CMS_CONFIG_DB_AUTH_PORT=3306 # Auth/Realmd database port
+CMS_CONFIG_DB_AUTH_USER=root # Auth/Realmd database username
+CMS_CONFIG_DB_AUTH_PASS=password # Auth/Realmd database password
+CMS_CONFIG_DB_AUTH_DBNAME=acore_auth # Auth/Realmd database name
+CMS_CONFIG_REALMLISTS='{"1":{"realmid":1,"realmname":"Realm 1","db_host":"ac-database","db_port":"3306","db_user":"root","db_pass":"password","db_name":"acore_characters"}}' # Realmlist configuration for each character database
+CMS_CONFIG_SCRIPT_VERSION=2.0.2 # Version of the configuration script
